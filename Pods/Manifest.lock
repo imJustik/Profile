@@ -1,0 +1,27 @@
+PODS:
+  - Digits (2.5.0):
+    - TwitterCore (= 2.5.0)
+  - Fabric (1.6.11)
+  - Realm (2.0.3):
+    - Realm/Headers (= 2.0.3)
+  - Realm/Headers (2.0.3)
+  - RealmSwift (2.0.3):
+    - Realm (= 2.0.3)
+  - TwitterCore (2.5.0):
+    - Fabric
+
+DEPENDENCIES:
+  - Digits
+  - Fabric
+  - RealmSwift
+
+SPEC CHECKSUMS:
+  Digits: c69ee2d1a6acf728c5d159f1bd335e4882bd3225
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
+  RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  TwitterCore: 95c46af93112768a7983bd370d66023553601d01
+
+PODFILE CHECKSUM: baec4ca189ff7f0490c0b47972287ff22bb805d7
+
+COCOAPODS: 1.2.0.beta.1
