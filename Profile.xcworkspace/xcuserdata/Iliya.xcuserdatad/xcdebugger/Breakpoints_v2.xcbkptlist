@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Profile/View Controllers/RootViewController/RootViewController.swift"
-            timestampString = "502557008.3673"
+            filePath = "Profile/View Controllers/AuthViewControllers/ViewModels/AuthViewControllerViewModel.swift"
+            timestampString = "502644603.664312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "moveToRegistationScreen()"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "didStartButtonTap()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Profile/View Controllers/RootViewController/RootViewController.swift"
-            timestampString = "502557009.883106"
+            filePath = "Profile/View Controllers/AuthViewControllers/ViewModels/CreateProfileViewControllerViewModel.swift"
+            timestampString = "502645738.839641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "moveToMainScreen()"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "lastNameTextDidChange(text:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

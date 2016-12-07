@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import DigitsKit
 
 class AppDependence {
     let window : UIWindow?
@@ -21,6 +23,16 @@ class AppDependence {
         if let rootController = window?.rootViewController as? RootViewController {
             rootController.rootControllerViewModel = rootViewModel
         }
+        
+        Fabric.with([Digits.self])
+        
+    }
+    
+    func setPageViewAppearance() {
+        let pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
+        pageControl.currentPageIndicatorTintColor = UIColor.red
+        pageControl.backgroundColor = UIColor.red
     }
     
     

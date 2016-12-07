@@ -10,5 +10,16 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "DBManager.loadUserFromCache() -&gt; RealmUser?:DBManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "savedDB.count">
+            </PersistentString>
+            <PersistentString
+               value = "loadUser.isAuth">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

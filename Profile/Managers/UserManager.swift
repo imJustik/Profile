@@ -14,4 +14,8 @@ class UserManager {
         return DBManager.shared.loadUserFromCache()
     }
     
+    func createUser(_ user: RealmUser) {
+        DBManager.shared.cacheObject(user)
+    }
+    
 }

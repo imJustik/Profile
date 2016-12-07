@@ -15,7 +15,7 @@ class DBManager {
         return _sharedInstance
     }
     
-    let schemaVersion: UInt64 = 1
+    let schemaVersion: UInt64 = 2
     
     func cacheObject(_ object:Object) { 
         let  configuration = Realm.Configuration(encryptionKey: self.getKey(), schemaVersion: schemaVersion)
@@ -38,6 +38,18 @@ class DBManager {
             }
         }
         return nil
+    }
+    
+    func cleanDB() {
+        autoreleasepool {
+            let configuration = Realm.Configuration(encryptionKey: self.getKey(), schemaVersion: schemaVersion) //realm
+            let  realm = try! Realm(configuration: configuration)
+            // Add an object
+            try! realm.write {
+                realm.deleteAll()
+            }
+        }
+        
     }
     
 }

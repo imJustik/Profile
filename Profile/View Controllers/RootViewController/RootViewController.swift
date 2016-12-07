@@ -19,6 +19,8 @@ class RootViewController: UIViewController, RootViewControllerViewModelDelegate 
 
 
     override func viewDidAppear(_ animated: Bool) {
+        DBManager.shared.cleanDB()
+        Digits.sharedInstance().logOut()
         if let viewModel = rootControllerViewModel {
             viewModel.getCurrentUser()
         }
@@ -32,7 +34,8 @@ class RootViewController: UIViewController, RootViewControllerViewModelDelegate 
     
     func moveToRegistationScreen() {
         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "AuthStoryboard") 
+        let controller = storyboard.instantiateViewController(withIdentifier: "AuthStoryboard") as! AuthViewController
+        controller.viewModel = AuthViewControllerViewModel()
         self.present(controller, animated: false, completion: nil)
     }
     

@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let appDependent = AppDependence(window: window)
-        appDependent.startConfiguration()
-        
+        let appDependence = AppDependence(window: window)
+        appDependence.startConfiguration()
+        appDependence.setPageViewAppearance()
         return true
     }
 
