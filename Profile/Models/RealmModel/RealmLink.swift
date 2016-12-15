@@ -10,6 +10,6 @@ import RealmSwift
 
 class RealmLink : Object {
     dynamic var id = 0
-    dynamic var type = 0 //??
+    dynamic var type : RealmTypeLink?
     dynamic var url = ""
 }

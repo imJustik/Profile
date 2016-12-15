@@ -10,17 +10,20 @@ import DigitsKit
 protocol AuthViewControlViewModel {
     weak var delegate : AuthViewControllerViewModelDelegate? {get set}
     var pageViewModels : [PageViewModel]? {get}
+    var user : RealmUser {get}
     func didStartButtonTap()
     
 }
 
 protocol AuthViewControllerViewModelDelegate : class {
-    func moveToNextScreenWithSession(_ session: DGTSession)
+    func moveToNextScreen()
 }
 
 class AuthViewControllerViewModel : AuthViewControlViewModel {
     weak var delegate : AuthViewControllerViewModelDelegate?
     let pageViewModels : [PageViewModel]?
+    let user = RealmUser()
+    let userManager = UserManager()
     
     init() {
         pageViewModels = PageViewModelManager.all()
@@ -30,7 +33,14 @@ class AuthViewControllerViewModel : AuthViewControlViewModel {
         let digits = Digits.sharedInstance()
         digits.authenticate { (session, error) in
             if (session != nil) {
-                self.delegate?.moveToNextScreenWithSession(session!)
+                self.user.phoneNumber = session!.phoneNumber
+                self.user.authToken = session!.authToken
+                self.user.authTokenSecret = session!.authTokenSecret
+                self.user.userID = session!.userID
+                self.user.isAuth = true
+                self.userManager.createUser(self.user)
+                
+                self.delegate?.moveToNextScreen()
             }
             else {
                 print("Authentication error: %@", error!.localizedDescription)

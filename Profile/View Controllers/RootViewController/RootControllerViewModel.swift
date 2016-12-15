@@ -11,6 +11,7 @@ import Foundation
 protocol RootViewControllerViewModelDelegate : class {
     func moveToRegistationScreen()
     func moveToMainScreen()
+    func moveToCreateProfileScreen()
 }
 
 protocol RootViewControllerViewModel {
@@ -25,7 +26,11 @@ class RootControllerViewModel : RootViewControllerViewModel {
         print("getCurrentUser")
         let currentUser = DBManager.shared.loadUserFromCache()
         if currentUser != nil {
-            delegate?.moveToMainScreen()
+            if currentUser!.profiles.count != 0 {
+                delegate?.moveToMainScreen()
+            } else {
+                delegate?.moveToCreateProfileScreen()
+              }
         } else {
             delegate?.moveToRegistationScreen()
         }

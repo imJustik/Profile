@@ -60,10 +60,10 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
         self.viewModel.didStartButtonTap()
     }
     
-    func moveToNextScreenWithSession(_ session: DGTSession) {
+    func moveToNextScreen() {
         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CreateFirstProfileStoryboard") as! CreateProfileViewController
-        controller.viewModel = CreateProfileViewControllerViewModel(session: session)
+        controller.viewModel = CreateProfileViewControllerViewModel()
         self.present(controller, animated: true, completion: nil)
     }
 }

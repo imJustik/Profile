@@ -18,6 +18,12 @@
 		4531AC641DF4A52E007F675F /* AuthViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531AC631DF4A52E007F675F /* AuthViewControllerViewModel.swift */; };
 		4531AC661DF5991B007F675F /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531AC651DF5991B007F675F /* CreateProfileViewController.swift */; };
 		4531AC681DF59B7C007F675F /* CreateProfileViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531AC671DF59B7C007F675F /* CreateProfileViewControllerViewModel.swift */; };
+		453D9EC31DFB119B00F06055 /* AddNewLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453D9EC21DFB119B00F06055 /* AddNewLinkCell.swift */; };
+		453D9EC51DFB11B400F06055 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453D9EC41DFB11B400F06055 /* LinkCell.swift */; };
+		454424FC1DFEE91700F7147B /* LinkTypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454424FB1DFEE91700F7147B /* LinkTypeTableCell.swift */; };
+		454424FE1DFEE9F100F7147B /* AddLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454424FD1DFEE9F100F7147B /* AddLinkViewController.swift */; };
+		454425001DFEED2900F7147B /* AddLinkViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454424FF1DFEED2900F7147B /* AddLinkViewControllerViewModel.swift */; };
+		454425021DFEEE0900F7147B /* TypeLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454425011DFEEE0900F7147B /* TypeLinkManager.swift */; };
 		455B37151DF42E9C00D47957 /* AppDependence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B37141DF42E9C00D47957 /* AppDependence.swift */; };
 		455B37171DF42F4C00D47957 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B37161DF42F4C00D47957 /* UserManager.swift */; };
 		455B371A1DF4306A00D47957 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B37191DF4306A00D47957 /* RootViewController.swift */; };
@@ -63,6 +69,12 @@
 		4531AC631DF4A52E007F675F /* AuthViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewControllerViewModel.swift; sourceTree = "<group>"; };
 		4531AC651DF5991B007F675F /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		4531AC671DF59B7C007F675F /* CreateProfileViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewControllerViewModel.swift; sourceTree = "<group>"; };
+		453D9EC21DFB119B00F06055 /* AddNewLinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewLinkCell.swift; sourceTree = "<group>"; };
+		453D9EC41DFB11B400F06055 /* LinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
+		454424FB1DFEE91700F7147B /* LinkTypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkTypeTableCell.swift; sourceTree = "<group>"; };
+		454424FD1DFEE9F100F7147B /* AddLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLinkViewController.swift; sourceTree = "<group>"; };
+		454424FF1DFEED2900F7147B /* AddLinkViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLinkViewControllerViewModel.swift; sourceTree = "<group>"; };
+		454425011DFEEE0900F7147B /* TypeLinkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeLinkManager.swift; sourceTree = "<group>"; };
 		455B37141DF42E9C00D47957 /* AppDependence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependence.swift; sourceTree = "<group>"; };
 		455B37161DF42F4C00D47957 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		455B37191DF4306A00D47957 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +205,7 @@
 				452EC6F41DF1EEE500531090 /* DBManager.swift */,
 				455B37161DF42F4C00D47957 /* UserManager.swift */,
 				457DA4441DF4A29C00920AFC /* PageViewModelManager.swift */,
+				454425011DFEEE0900F7147B /* TypeLinkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -200,6 +213,8 @@
 		452EC6EE1DF1EE5000531090 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				454424FA1DFEE8C900F7147B /* TableViewCells */,
+				453D9EC11DFB117400F06055 /* CollectionViewCells */,
 				452EC6FA1DF2194200531090 /* RealmModel */,
 			);
 			path = Models;
@@ -254,6 +269,23 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		453D9EC11DFB117400F06055 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				453D9EC21DFB119B00F06055 /* AddNewLinkCell.swift */,
+				453D9EC41DFB11B400F06055 /* LinkCell.swift */,
+			);
+			name = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		454424FA1DFEE8C900F7147B /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				454424FB1DFEE91700F7147B /* LinkTypeTableCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		455B37181DF4306A00D47957 /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +312,7 @@
 				45B6D9971DF83A7D00038D29 /* ViewModels */,
 				455B37281DF469DF00D47957 /* MainViewController.swift */,
 				45B6D9951DF838ED00038D29 /* ProfileViewController.swift */,
+				454424FD1DFEE9F100F7147B /* AddLinkViewController.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -289,6 +322,7 @@
 			children = (
 				45B6D9981DF83A9100038D29 /* MainViewControllerViewModel.swift */,
 				45B6D99A1DF83AA600038D29 /* ProfileViewControllerViewModel.swift */,
+				454424FF1DFEED2900F7147B /* AddLinkViewControllerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -533,11 +567,16 @@
 				4531AC641DF4A52E007F675F /* AuthViewControllerViewModel.swift in Sources */,
 				455B371A1DF4306A00D47957 /* RootViewController.swift in Sources */,
 				455B37171DF42F4C00D47957 /* UserManager.swift in Sources */,
+				453D9EC31DFB119B00F06055 /* AddNewLinkCell.swift in Sources */,
+				453D9EC51DFB11B400F06055 /* LinkCell.swift in Sources */,
 				45B6D9961DF838ED00038D29 /* ProfileViewController.swift in Sources */,
 				45B6D99B1DF83AA600038D29 /* ProfileViewControllerViewModel.swift in Sources */,
 				455B37291DF469DF00D47957 /* MainViewController.swift in Sources */,
+				454424FC1DFEE91700F7147B /* LinkTypeTableCell.swift in Sources */,
+				454424FE1DFEE9F100F7147B /* AddLinkViewController.swift in Sources */,
 				45B6D9991DF83A9100038D29 /* MainViewControllerViewModel.swift in Sources */,
 				455B371C1DF4309400D47957 /* RootControllerViewModel.swift in Sources */,
+				454425021DFEEE0900F7147B /* TypeLinkManager.swift in Sources */,
 				45A609EB1DF2325200F98F20 /* RealmTypeLink.swift in Sources */,
 				455B37151DF42E9C00D47957 /* AppDependence.swift in Sources */,
 				452EC6FE1DF21C6100531090 /* RealmProfile.swift in Sources */,
@@ -546,6 +585,7 @@
 				452EC6CB1DF1E29400531090 /* AppDelegate.swift in Sources */,
 				452EC6F51DF1EEE500531090 /* DBManager.swift in Sources */,
 				45A609ED1DF235DB00F98F20 /* RealmLink.swift in Sources */,
+				454425001DFEED2900F7147B /* AddLinkViewControllerViewModel.swift in Sources */,
 				457DA4411DF4906C00920AFC /* AuthContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

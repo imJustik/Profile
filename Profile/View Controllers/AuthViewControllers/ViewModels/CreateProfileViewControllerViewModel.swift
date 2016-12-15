@@ -9,14 +9,7 @@
 import DigitsKit
 protocol CreateProfileViewModel {
     weak var delegate : CreateProfileViewModelDelegate? {get set}
-    init(session: DGTSession)
-//    var image : UIImage {get}
-//    var firstName : String {get}
-//    var lastName : String? {get}
-//    var middleName: String? {get}
-//    var phoneNumber: String? {get}
-//    var email: String? {get}
-//    var birthday: String? {get}
+    var user : RealmUser? {get}
     
     
     func enterButtonTapped()
@@ -38,15 +31,12 @@ protocol CreateProfileViewModelDelegate : class{
 
 class CreateProfileViewControllerViewModel :  CreateProfileViewModel {
     weak var delegate: CreateProfileViewModelDelegate?
-    let user = RealmUser()
+    var user : RealmUser?
     let profile = RealmProfile()
     let userManager = UserManager()
     
-    required init(session: DGTSession) {
-        user.phoneNumber = session.phoneNumber
-        user.authToken = session.authToken
-        user.authTokenSecret = session.authTokenSecret
-        user.userID = session.userID
+    init() {
+        user = userManager.getAuthUserFromDB()
         profile.typeProfile = .User
     }
     
@@ -79,10 +69,10 @@ class CreateProfileViewControllerViewModel :  CreateProfileViewModel {
     }
     
     func enterButtonTapped() {
-        user.profiles.append(profile)
-        user.isAuth = true
-        userManager.createUser(user)
+        if user != nil {
+        userManager.addProfile(user: user!, profile: profile)
         delegate?.moveToMainScreen()
+        } else { print("Error with User") }
     }
     
     

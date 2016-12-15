@@ -41,7 +41,17 @@ class RootViewController: UIViewController, RootViewControllerViewModelDelegate 
     
     func moveToMainScreen() {
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ProfileStoryboard")
+        let controller = storyboard.instantiateViewController(withIdentifier: "MainStoryboard") as! UITabBarController
+        let navVC = controller.viewControllers?.first as! UINavigationController
+        let mainVC = navVC.viewControllers.first as! MainViewController
+        mainVC.viewModel = MainViewControllerViewModel()
+        self.present(controller, animated: false, completion: nil)
+    }
+    
+    func moveToCreateProfileScreen() {
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "CreateFirstProfileStoryboard") as! CreateProfileViewController
+        controller.viewModel = CreateProfileViewControllerViewModel()
         self.present(controller, animated: false, completion: nil)
     }
     

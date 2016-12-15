@@ -11,6 +11,13 @@ import RealmSwift
 class RealmTypeLink: Object {
     dynamic var id = 0
     dynamic var name = ""
-    dynamic var title = ""
+    dynamic var basicURL = ""
     dynamic var imageURL = ""
+    
+    convenience init(name: String, basicURL: String, imageURL: String) {
+        self.init()
+        self.name = name
+        self.basicURL = basicURL
+        self.imageURL = imageURL
+    }
 }

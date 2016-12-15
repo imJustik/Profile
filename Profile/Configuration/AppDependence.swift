@@ -25,6 +25,14 @@ class AppDependence {
         }
         
         Fabric.with([Digits.self])
+        UINavigationBar.appearance().barTintColor = UIColor(red: 250/255, green: 251/255, blue: 254/255, alpha: 1)
+        
+        UINavigationBar.appearance().tintColor = UIColor(red: 111/255, green: 127/255, blue: 141/255, alpha: 1)
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 111/255, green: 127/255, blue: 141/255, alpha: 1)]
+        
+//            UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+           UINavigationBar.appearance().shadowImage = UIImage()
         
     }
     

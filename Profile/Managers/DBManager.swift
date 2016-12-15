@@ -15,7 +15,7 @@ class DBManager {
         return _sharedInstance
     }
     
-    let schemaVersion: UInt64 = 2
+    let schemaVersion: UInt64 = 3
     
     func cacheObject(_ object:Object) { 
         let  configuration = Realm.Configuration(encryptionKey: self.getKey(), schemaVersion: schemaVersion)
@@ -23,6 +23,22 @@ class DBManager {
         try! realm.write {
             realm.add(object)
             print("Записали в Базу")
+        }
+    }
+    
+    func addLinkToProfile (profile: RealmProfile, link : RealmLink) {
+        let  configuration = Realm.Configuration(encryptionKey: self.getKey(), schemaVersion: schemaVersion)
+        let realm = try! Realm(configuration: configuration)
+        try! realm.write {
+            profile.links.append(link)
+        }
+    }
+    
+    func addProfileToUser(user : RealmUser, profile: RealmProfile) {
+        let  configuration = Realm.Configuration(encryptionKey: self.getKey(), schemaVersion: schemaVersion)
+        let realm = try! Realm(configuration: configuration)
+        try! realm.write {
+            user.profiles.append(profile)
         }
     }
     

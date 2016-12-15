@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateProfileViewController : UIViewController, UITextFieldDelegate, CreateProfileViewModelDelegate {
+class CreateProfileViewController : UITableViewController, UITextFieldDelegate, CreateProfileViewModelDelegate {
     
     var viewModel : CreateProfileViewModel? {
         didSet {
@@ -16,6 +16,7 @@ class CreateProfileViewController : UIViewController, UITextFieldDelegate, Creat
         }
     }
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var middleNameTextField: UITextField!
@@ -25,12 +26,20 @@ class CreateProfileViewController : UIViewController, UITextFieldDelegate, Creat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+       view.addGestureRecognizer(tap)
+       tap.cancelsTouchesInView = false
+        
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         middleNameTextField.delegate = self
         phoneNumberTextField.delegate = self
         emailTextField.delegate = self
         birthdayTextField.delegate = self
+    }
+    
+    func hideKeyboard() {
+        self.view.endEditing(true)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -60,7 +69,11 @@ class CreateProfileViewController : UIViewController, UITextFieldDelegate, Creat
 
     func moveToMainScreen() {
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ProfileStoryboard") as! MainViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "MainStoryboard") as! UITabBarController
+        let navVC = controller.viewControllers?.first as! UINavigationController
+        let mainVC = navVC.viewControllers.first as! MainViewController
+        mainVC.viewModel = MainViewControllerViewModel()
+
         self.present(controller, animated: true, completion: nil)
         
     }

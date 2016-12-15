@@ -18,4 +18,8 @@ class UserManager {
         DBManager.shared.cacheObject(user)
     }
     
+    func addProfile(user: RealmUser, profile: RealmProfile) {
+        DBManager.shared.addProfileToUser(user: user, profile: profile)
+    }
+    
 }

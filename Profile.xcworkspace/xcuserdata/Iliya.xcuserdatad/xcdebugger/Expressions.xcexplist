@@ -3,7 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "RootViewController.viewDidLoad() -&gt; ():RootViewController.swift">
+         contextName = "ProfileViewController.collectionView(UICollectionView, cellForItemAt : IndexPath) -&gt; UICollectionViewCell:ProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.links![indexPath.item].type!.imageURL">
+            </PersistentString>
+            <PersistentString
+               value = "viewModel.links!.count">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.item">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddLinkViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:AddLinkViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "viewModel">
@@ -18,6 +32,68 @@
             </PersistentString>
             <PersistentString
                value = "loadUser.isAuth">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.viewControllerAtIndex(index : Int) -&gt; ProfileViewController:MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewControllerViewModel.updateData() -&gt; ():MainViewControllerViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "profiles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateProfileViewController.handleKeyboardNotification(Notification) -&gt; ():CreateProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "topConstraint">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileViewController.viewDidLoad() -&gt; ():ProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionView">
+            </PersistentString>
+            <PersistentString
+               value = "userImageView.frame.size.width/2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileViewController.collectionView(UICollectionView, numberOfItemsInSection : Int) -&gt; Int:ProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "links.count+1">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateProfileViewController.viewDidLoad() -&gt; ():CreateProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageView.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "imageView.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RootViewController.viewDidLoad() -&gt; ():RootViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
