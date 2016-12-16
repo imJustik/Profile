@@ -14,6 +14,6 @@ class LinkCell: UICollectionViewCell {
     @IBOutlet weak var linkImageView: UIImageView!
     
     @IBAction func linkButtonTap(_ sender: UIButton) {
-        print("ОПА")
+        
     }
 }

@@ -36,18 +36,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MainViewController.viewControllerAtIndex(index : Int) -&gt; ProfileViewController:MainViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewModel">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "MainViewControllerViewModel.updateData() -&gt; ():MainViewControllerViewModel.swift">
          <PersistentStrings>
             <PersistentString
                value = "profiles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileViewController.collectionView(UICollectionView, numberOfItemsInSection : Int) -&gt; Int:ProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "links.count+1">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -63,18 +63,18 @@
          contextName = "ProfileViewController.viewDidLoad() -&gt; ():ProfileViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "collectionView">
+               value = "userImageView.frame.size.width/2">
             </PersistentString>
             <PersistentString
-               value = "userImageView.frame.size.width/2">
+               value = "collectionView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProfileViewController.collectionView(UICollectionView, numberOfItemsInSection : Int) -&gt; Int:ProfileViewController.swift">
+         contextName = "RootViewController.viewDidLoad() -&gt; ():RootViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "links.count+1">
+               value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -90,7 +90,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RootViewController.viewDidLoad() -&gt; ():RootViewController.swift">
+         contextName = "AuthViewController.viewDidAppear(Bool) -&gt; ():AuthViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel?.user">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.viewControllerAtIndex(index : Int) -&gt; ProfileViewController:MainViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "viewModel">

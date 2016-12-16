@@ -39,6 +39,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YRX-Jh-w18"/>
+                    <connections>
+                        <segue destination="gPc-mM-tzv" kind="modal" identifier="ToCreateProfileSegue" id="oq1-AG-51r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO2-dW-QQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,7 +257,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVK-de-7zX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="685.60000000000002" y="489.80509745127438"/>
+            <point key="canvasLocation" x="686" y="597"/>
         </scene>
         <!--Auth Content View Controller-->
         <scene sceneID="0j3-21-K4U">

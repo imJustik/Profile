@@ -31,8 +31,8 @@ class AppDependence {
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 111/255, green: 127/255, blue: 141/255, alpha: 1)]
         
-//            UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-           UINavigationBar.appearance().shadowImage = UIImage()
+         //UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+         //  UINavigationBar.appearance().shadowImage = UIImage()
         
     }
     

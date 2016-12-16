@@ -22,6 +22,8 @@ class ProfileViewController: UIViewController, ProfileViewModelDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var profileView: UIView!
+    
     var mainVCDelegate : MainViewControllerDelegate?
     
     var viewModel : ProfileViewModel! {
@@ -37,9 +39,15 @@ class ProfileViewController: UIViewController, ProfileViewModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profileView.layer.shadowColor = UIColor.black.cgColor
+        profileView.layer.shadowOpacity = 0.10
+        profileView.layer.shadowOffset = CGSize.zero
+        profileView.layer.shadowRadius = 5
+        
         if let imageData = viewModel.image {
             userImageView.image = UIImage(data: imageData as Data)!
         }
+        
         nameLabel.text = viewModel.username
         numberLabel.text = viewModel.phoneNumber
         emailLabel.text = viewModel.email

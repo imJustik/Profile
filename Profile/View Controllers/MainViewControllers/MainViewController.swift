@@ -29,12 +29,7 @@ class MainViewController: UIViewController,
         let viewControllers = [startVC]
         
         self.pageViewController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
-         self.pageViewController.view.frame = CGRect(x: 15,y:75, width: self.view.frame.width-30, height: self.view.frame.size.height - 139)
-        
-        self.pageViewController.view.layer.shadowColor = UIColor.black.cgColor
-        self.pageViewController.view.layer.shadowOpacity = 0.10
-        self.pageViewController.view.layer.shadowOffset = CGSize.zero
-        self.pageViewController.view.layer.shadowRadius = 5
+         self.pageViewController.view.frame = CGRect(x: 0,y:65, width: self.view.frame.width, height: self.view.frame.size.height - 115)
         
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)

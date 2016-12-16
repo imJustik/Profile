@@ -36,6 +36,16 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if viewModel?.user != nil {
+            let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "CreateFirstProfileStoryboard") as! CreateProfileViewController
+            controller.viewModel = CreateProfileViewControllerViewModel()
+            self.present(controller, animated: true, completion: nil)
+
+        }
+    }
+    
 
     
     
@@ -57,10 +67,28 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
     
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-        self.viewModel.didStartButtonTap()
+
+        
+        let digitsAppearance = DGTAppearance()
+        digitsAppearance.backgroundColor = UIColor.white
+        digitsAppearance.logoImage = UIImage(named: "vkLogo")
+        digitsAppearance.accentColor = UIColor.black
+        
+        let configuration = DGTAuthenticationConfiguration(accountFields: .defaultOptionMask)
+        configuration?.appearance = digitsAppearance
+        configuration?.title = "MyApp Title"
+        configuration?.phoneNumber = "9215821130"
+        
+        let digits = Digits.sharedInstance()
+        digits.authenticate(with: nil, configuration: configuration!) { (session, error) in
+            if (session != nil) {
+                self.viewModel.didStartButtonTap(session: session!)
+            }
+        }
     }
     
     func moveToNextScreen() {
+       // self.performSegue(withIdentifier: "ToCreateProfileSegue", sender: nil)
         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CreateFirstProfileStoryboard") as! CreateProfileViewController
         controller.viewModel = CreateProfileViewControllerViewModel()

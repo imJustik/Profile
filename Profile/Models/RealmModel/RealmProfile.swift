@@ -9,8 +9,8 @@
 import RealmSwift
 
 enum ProfileType : Int {
-    case User // профайл пользователя
-    case Friend //профайлы друзей
+    case User
+    case Friend
 }
 
 class RealmProfile : Object {

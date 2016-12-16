@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Profile/View Controllers/AuthViewControllers/ViewModels/AuthViewControllerViewModel.swift"
-            timestampString = "502644603.664312"
+            timestampString = "503595018.608334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "didStartButtonTap()"
+            landmarkName = "didStartButtonTap(session:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,29 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Profile/View Controllers/AuthViewControllers/ViewModels/AuthViewControllerViewModel.swift"
-            timestampString = "503499266.370953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "didStartButtonTap()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Profile/View Controllers/AuthViewControllers/AuthViewController.swift"
-            timestampString = "503507694.14587"
+            timestampString = "503595018.608334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "moveToNextScreen()"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "startButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
