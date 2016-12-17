@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DigitsKit
 
 protocol RootViewControllerViewModelDelegate : class {
     func moveToRegistationScreen()
@@ -24,6 +25,7 @@ class RootControllerViewModel : RootViewControllerViewModel {
     
     func getCurrentUser() {
         print("getCurrentUser")
+        
         let currentUser = DBManager.shared.loadUserFromCache()
         if currentUser != nil {
             if currentUser!.profiles.count != 0 {
@@ -35,6 +37,11 @@ class RootControllerViewModel : RootViewControllerViewModel {
             delegate?.moveToRegistationScreen()
         }
         
+    }
+    
+    func cleanAll() {
+        DBManager.shared.cleanDB()
+        Digits.sharedInstance().logOut()
     }
     
     

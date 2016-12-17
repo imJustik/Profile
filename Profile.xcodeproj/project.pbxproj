@@ -39,6 +39,9 @@
 		45B6D9961DF838ED00038D29 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6D9951DF838ED00038D29 /* ProfileViewController.swift */; };
 		45B6D9991DF83A9100038D29 /* MainViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6D9981DF83A9100038D29 /* MainViewControllerViewModel.swift */; };
 		45B6D99B1DF83AA600038D29 /* ProfileViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6D99A1DF83AA600038D29 /* ProfileViewControllerViewModel.swift */; };
+		45BB41CD1E048B0C000FCEF1 /* StotyboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41CC1E048B0C000FCEF1 /* StotyboardRouter.swift */; };
+		45BB41CF1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41CE1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift */; };
+		45BB41D11E055E82000FCEF1 /* DispathQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41D01E055E82000FCEF1 /* DispathQueue+Once.swift */; };
 		63318F4F2758F3F07ABD5A34 /* Pods_Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AE6DC608A8559B89659F45 /* Pods_Profile.framework */; };
 		94D915E8D071E37FCE625E7C /* Pods_ProfileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A84112364A796F1493C79 /* Pods_ProfileTests.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +94,9 @@
 		45B6D9951DF838ED00038D29 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		45B6D9981DF83A9100038D29 /* MainViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerViewModel.swift; sourceTree = "<group>"; };
 		45B6D99A1DF83AA600038D29 /* ProfileViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerViewModel.swift; sourceTree = "<group>"; };
+		45BB41CC1E048B0C000FCEF1 /* StotyboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StotyboardRouter.swift; sourceTree = "<group>"; };
+		45BB41CE1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersRoutingSwizzle.swift; sourceTree = "<group>"; };
+		45BB41D01E055E82000FCEF1 /* DispathQueue+Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispathQueue+Once.swift"; sourceTree = "<group>"; };
 		B83F3C516B224908311570CE /* Pods-Profile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Profile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Profile/Pods-Profile.debug.xcconfig"; sourceTree = "<group>"; };
 		BC10A62F937DE360DE6B8028 /* Pods-ProfileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProfileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProfileTests/Pods-ProfileTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3D87FE7A1A2B5518A6E19C3 /* Pods-Profile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Profile.release.xcconfig"; path = "Pods/Target Support Files/Pods-Profile/Pods-Profile.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				455B37141DF42E9C00D47957 /* AppDependence.swift */,
+				45BB41CE1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 		452EC6EC1DF1EE5000531090 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				45BB41D01E055E82000FCEF1 /* DispathQueue+Once.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 				455B37161DF42F4C00D47957 /* UserManager.swift */,
 				457DA4441DF4A29C00920AFC /* PageViewModelManager.swift */,
 				454425011DFEEE0900F7147B /* TypeLinkManager.swift */,
+				45BB41CC1E048B0C000FCEF1 /* StotyboardRouter.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -565,6 +574,7 @@
 				455B37271DF469D600D47957 /* AuthViewController.swift in Sources */,
 				457DA4451DF4A29C00920AFC /* PageViewModelManager.swift in Sources */,
 				4531AC641DF4A52E007F675F /* AuthViewControllerViewModel.swift in Sources */,
+				45BB41CD1E048B0C000FCEF1 /* StotyboardRouter.swift in Sources */,
 				455B371A1DF4306A00D47957 /* RootViewController.swift in Sources */,
 				455B37171DF42F4C00D47957 /* UserManager.swift in Sources */,
 				453D9EC31DFB119B00F06055 /* AddNewLinkCell.swift in Sources */,
@@ -576,6 +586,7 @@
 				454424FE1DFEE9F100F7147B /* AddLinkViewController.swift in Sources */,
 				45B6D9991DF83A9100038D29 /* MainViewControllerViewModel.swift in Sources */,
 				455B371C1DF4309400D47957 /* RootControllerViewModel.swift in Sources */,
+				45BB41CF1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift in Sources */,
 				454425021DFEEE0900F7147B /* TypeLinkManager.swift in Sources */,
 				45A609EB1DF2325200F98F20 /* RealmTypeLink.swift in Sources */,
 				455B37151DF42E9C00D47957 /* AppDependence.swift in Sources */,
@@ -583,6 +594,7 @@
 				4531AC681DF59B7C007F675F /* CreateProfileViewControllerViewModel.swift in Sources */,
 				452EC6FC1DF2195500531090 /* RealmUser.swift in Sources */,
 				452EC6CB1DF1E29400531090 /* AppDelegate.swift in Sources */,
+				45BB41D11E055E82000FCEF1 /* DispathQueue+Once.swift in Sources */,
 				452EC6F51DF1EEE500531090 /* DBManager.swift in Sources */,
 				45A609ED1DF235DB00F98F20 /* RealmLink.swift in Sources */,
 				454425001DFEED2900F7147B /* AddLinkViewControllerViewModel.swift in Sources */,

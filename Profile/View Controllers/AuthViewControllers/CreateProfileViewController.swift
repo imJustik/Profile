@@ -10,6 +10,8 @@ import UIKit
 
 class CreateProfileViewController : UITableViewController, UITextFieldDelegate, CreateProfileViewModelDelegate {
     
+    var router: StoryboardRouter<UIViewController>?
+
     var viewModel : CreateProfileViewModel? {
         didSet {
             viewModel?.delegate = self
@@ -26,6 +28,8 @@ class CreateProfileViewController : UITableViewController, UITextFieldDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        router = StoryboardRouter(viewController: self)
+        
         let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
        view.addGestureRecognizer(tap)
        tap.cancelsTouchesInView = false
@@ -68,13 +72,6 @@ class CreateProfileViewController : UITableViewController, UITextFieldDelegate, 
     }
 
     func moveToMainScreen() {
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MainStoryboard") as! UITabBarController
-        let navVC = controller.viewControllers?.first as! UINavigationController
-        let mainVC = navVC.viewControllers.first as! MainViewController
-        mainVC.viewModel = MainViewControllerViewModel()
-
-        self.present(controller, animated: true, completion: nil)
-        
+        router?.navigateToMainProfileScreen(animated: true)
     }
 }

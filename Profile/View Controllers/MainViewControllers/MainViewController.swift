@@ -12,6 +12,7 @@ class MainViewController: UIViewController,
     MainViewViewModelDelegate, MainViewControllerDelegate {
     var pageViewController : UIPageViewController!
     var index = 0 //current profile id
+    var router : StoryboardRouter<UIViewController>?
     
     var viewModel : MainViewViewModel! {
         didSet {
@@ -21,6 +22,7 @@ class MainViewController: UIViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        router = StoryboardRouter(viewController: self)
         self.automaticallyAdjustsScrollViewInsets = false
         
         self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewProfile") as! UIPageViewController
@@ -58,27 +60,23 @@ class MainViewController: UIViewController,
     
     
     func moveToCreateLink() {
-        self.performSegue(withIdentifier: "MoveToAddLinkSegue", sender: self)
-        
+        router?.navigateToAddLinkScreen(animated: true, profile: viewModel.profiles![index])
     }
     
     @IBAction func addNewProfileButtonTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "CreateFirstProfileStoryboard") as! CreateProfileViewController
-        controller.viewModel = CreateProfileViewControllerViewModel()
-        self.present(controller, animated: true, completion: nil)
+        router?.navigateToCreateProfileScreen(animated: true)
 
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MoveToAddLinkSegue"
-        {
-            if let destinationVC = segue.destination as? AddLinkViewController {
-                destinationVC.viewModel = AddLinkViewControllerViewModel(profile: viewModel.profiles![index])
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "MoveToAddLinkSegue"
+//        {
+//            if let destinationVC = segue.destination as? AddLinkViewController {
+//                destinationVC.viewModel = AddLinkViewControllerViewModel(profile: viewModel.profiles![index])
+//            }
+//        }
+//    }
 }
 
 

@@ -16,7 +16,7 @@ protocol AuthViewControlViewModel {
 }
 
 protocol AuthViewControllerViewModelDelegate : class {
-    func moveToNextScreen()
+    
 }
 
 class AuthViewControllerViewModel : AuthViewControlViewModel {
@@ -37,8 +37,6 @@ class AuthViewControllerViewModel : AuthViewControlViewModel {
         self.user!.userID = session.userID
         self.user!.isAuth = true
         self.userManager.createUser(self.user!)
-        
-        self.delegate?.moveToNextScreen()
     }
     
 }

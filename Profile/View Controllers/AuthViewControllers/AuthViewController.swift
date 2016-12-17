@@ -9,7 +9,8 @@ import DigitsKit
 import UIKit
 
 class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate {
-
+    
+    var router : StoryboardRouter<UIViewController>?
     var pageViewController: UIPageViewController!
     var viewModel : AuthViewControllerViewModel! {
         didSet {
@@ -19,6 +20,8 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        router = StoryboardRouter(viewController: self)
+        
         self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         let startVC = self.viewControllerAtIndex(index: 0)
@@ -30,23 +33,12 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
         self.pageViewController.didMove(toParentViewController: self)
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if viewModel?.user != nil {
-            let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "CreateFirstProfileStoryboard") as! CreateProfileViewController
-            controller.viewModel = CreateProfileViewControllerViewModel()
-            self.present(controller, animated: true, completion: nil)
-
+            router?.navigateToCreateProfileScreen(animated: true)
         }
     }
-    
-
     
     
     func viewControllerAtIndex(index:Int) -> AuthContentViewController {
@@ -57,8 +49,6 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
         }
         
         let vc: AuthContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! AuthContentViewController
-        
-        
         vc.imageFile = pageModels[index].imageURL
         vc.titleText = pageModels[index].title
         vc.pageIndex = index
@@ -67,7 +57,6 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
     
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-
         
         let digitsAppearance = DGTAppearance()
         digitsAppearance.backgroundColor = UIColor.white
@@ -85,14 +74,6 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
                 self.viewModel.didStartButtonTap(session: session!)
             }
         }
-    }
-    
-    func moveToNextScreen() {
-       // self.performSegue(withIdentifier: "ToCreateProfileSegue", sender: nil)
-        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "CreateFirstProfileStoryboard") as! CreateProfileViewController
-        controller.viewModel = CreateProfileViewControllerViewModel()
-        self.present(controller, animated: true, completion: nil)
     }
 }
 

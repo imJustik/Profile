@@ -7,56 +7,40 @@
 //
 
 import UIKit
-import DigitsKit
-
-
 class RootViewController: UIViewController, RootViewControllerViewModelDelegate {
+    
+    var router : StoryboardRouter<UIViewController>?
+    
     var rootControllerViewModel : RootControllerViewModel? {
         didSet {
             rootControllerViewModel?.delegate = self
         }
     }
-
-
+    
+    override func viewDidLoad() {
+        router = StoryboardRouter(viewController: self)
+       // rootControllerViewModel?.cleanAll()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        DBManager.shared.cleanDB()
-        Digits.sharedInstance().logOut()
         if let viewModel = rootControllerViewModel {
             viewModel.getCurrentUser()
         }
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
         
     }
-    
+
     func moveToRegistationScreen() {
-        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "AuthStoryboard") as! AuthViewController
-        controller.viewModel = AuthViewControllerViewModel()
-        self.present(controller, animated: false, completion: nil)
+        router?.navigateToRegistationScreen(animated: false)
     }
     
     func moveToMainScreen() {
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MainStoryboard") as! UITabBarController
-        let navVC = controller.viewControllers?.first as! UINavigationController
-        let mainVC = navVC.viewControllers.first as! MainViewController
-        mainVC.viewModel = MainViewControllerViewModel()
-        self.present(controller, animated: false, completion: nil)
+        router?.navigateToMainProfileScreen(animated: false)
     }
     
     func moveToCreateProfileScreen() {
-        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "CreateFirstProfileStoryboard") as! CreateProfileViewController
-        controller.viewModel = CreateProfileViewControllerViewModel()
-        self.present(controller, animated: false, completion: nil)
+        router?.navigateToCreateProfileScreen(animated: false)
     }
     
 }
 
-
-//MARK: - Delegats
 
