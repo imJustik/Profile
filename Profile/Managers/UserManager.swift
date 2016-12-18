@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DigitsKit
 
 class UserManager {
     
@@ -14,12 +15,16 @@ class UserManager {
         return DBManager.shared.loadUserFromCache()
     }
     
-    func createUser(_ user: RealmUser) {
+    func createUser(with session: DGTSession) {
+        let user = RealmUser(session: session)
+        user.isAuth = true
         DBManager.shared.cacheObject(user)
     }
     
     func addProfile(user: RealmUser, profile: RealmProfile) {
         DBManager.shared.addProfileToUser(user: user, profile: profile)
     }
+    
+    
     
 }

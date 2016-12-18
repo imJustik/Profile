@@ -7,6 +7,7 @@
 //
 
 import RealmSwift
+import DigitsKit
 enum AccountType : Int {
     case Basic
     case Pro
@@ -32,6 +33,15 @@ class RealmUser: Object {
     dynamic var isAuth = false
     var profiles = List<RealmProfile>()
     var friendProfiles = List<RealmProfile>()
+    
+    convenience init(session: DGTSession) {
+        self.init()
+        self.authToken = session.phoneNumber
+        self.authTokenSecret = session.authTokenSecret
+        self.userID = session.userID
+        self.phoneNumber = session.phoneNumber
+    }
+    
     
     override static func primaryKey() -> String? {
         return "id"

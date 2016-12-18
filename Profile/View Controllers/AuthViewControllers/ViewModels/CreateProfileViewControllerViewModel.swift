@@ -72,7 +72,9 @@ class CreateProfileViewControllerViewModel :  CreateProfileViewModel {
         if user != nil {
         userManager.addProfile(user: user!, profile: profile)
         delegate?.moveToMainScreen()
-        } else { print("Error with User") }
+        } else {
+            print("Error with User")
+        }
     }
     
     

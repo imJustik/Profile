@@ -30,13 +30,7 @@ class AuthViewControllerViewModel : AuthViewControlViewModel {
     }
     
     func didStartButtonTap(session: DGTSession) {
-        user = RealmUser()
-        self.user!.phoneNumber = session.phoneNumber
-        self.user!.authToken = session.authToken
-        self.user!.authTokenSecret = session.authTokenSecret
-        self.user!.userID = session.userID
-        self.user!.isAuth = true
-        self.userManager.createUser(self.user!)
+        self.userManager.createUser(with: session)
     }
     
 }
