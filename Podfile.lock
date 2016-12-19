@@ -2,6 +2,7 @@ PODS:
   - Digits (2.5.0):
     - TwitterCore (= 2.5.0)
   - Fabric (1.6.11)
+  - PeekPop (1.0.0)
   - Realm (2.0.3):
     - Realm/Headers (= 2.0.3)
   - Realm/Headers (2.0.3)
@@ -13,15 +14,17 @@ PODS:
 DEPENDENCIES:
   - Digits
   - Fabric
+  - PeekPop (~> 1.0)
   - RealmSwift
 
 SPEC CHECKSUMS:
   Digits: c69ee2d1a6acf728c5d159f1bd335e4882bd3225
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  PeekPop: dcac0f339476b99eb50f8e3bc584f332c744ecf1
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
   TwitterCore: 95c46af93112768a7983bd370d66023553601d01
 
-PODFILE CHECKSUM: baec4ca189ff7f0490c0b47972287ff22bb805d7
+PODFILE CHECKSUM: 8540802bcb5a3749c0f4365856f7e1f84b3e2568
 
 COCOAPODS: 1.2.0.beta.1

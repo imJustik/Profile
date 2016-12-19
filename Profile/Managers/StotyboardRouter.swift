@@ -37,6 +37,8 @@ class StoryboardRouter<T: UIViewController> {
         viewController?.present(controller, animated: animated, completion: nil)
     }
     
+
+    
     func navigateToAddLinkScreen(animated: Bool, profile: RealmProfile) {
         self.performSegue(identifier: "MoveToAddLinkSegue") { (viewController: AddLinkViewController) in
             viewController.viewModel = AddLinkViewControllerViewModel(profile: profile)

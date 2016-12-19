@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '73EA2962F3653FB830664BA90F3E0437'
-               BlueprintName = 'Realm'
+               BlueprintIdentifier = '6DD965CF444FDB1C8FB235C5A417C39C'
+               BlueprintName = 'PeekPop'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Realm.framework'>
+               BuildableName = 'PeekPop.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

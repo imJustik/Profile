@@ -7,6 +7,7 @@ target 'Profile' do
   pod 'Fabric'
   pod 'Digits'
   pod 'RealmSwift'
+  pod 'PeekPop', '~> 1.0'
 
   target 'ProfileTests' do
     inherit! :search_paths

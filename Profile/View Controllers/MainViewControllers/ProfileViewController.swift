@@ -26,6 +26,10 @@ class ProfileViewController: UIViewController, ProfileViewModelDelegate {
     
     var mainVCDelegate : MainViewControllerDelegate?
     
+    var peekPop: PeekPop?
+    var router : StoryboardRouter<UIViewController>?
+   
+    
     var viewModel : ProfileViewModel! {
         didSet {
             viewModel.delegate = self
@@ -38,7 +42,7 @@ class ProfileViewController: UIViewController, ProfileViewModelDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        router = StoryboardRouter(viewController: self)
         profileView.layer.shadowColor = UIColor.black.cgColor
         profileView.layer.shadowOpacity = 0.10
         profileView.layer.shadowOffset = CGSize.zero
@@ -55,12 +59,12 @@ class ProfileViewController: UIViewController, ProfileViewModelDelegate {
         collectionView.delegate = self
         collectionView.dataSource = self
         self.automaticallyAdjustsScrollViewInsets = false
+    
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         collectionView.reloadData()
     }
-    
-    
 }
 
 extension ProfileViewController : UICollectionViewDelegate, UICollectionViewDataSource {

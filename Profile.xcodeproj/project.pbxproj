@@ -42,6 +42,7 @@
 		45BB41CD1E048B0C000FCEF1 /* StotyboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41CC1E048B0C000FCEF1 /* StotyboardRouter.swift */; };
 		45BB41CF1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41CE1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift */; };
 		45BB41D11E055E82000FCEF1 /* DispathQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41D01E055E82000FCEF1 /* DispathQueue+Once.swift */; };
+		45BB41D31E072236000FCEF1 /* SendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41D21E072236000FCEF1 /* SendingViewController.swift */; };
 		63318F4F2758F3F07ABD5A34 /* Pods_Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AE6DC608A8559B89659F45 /* Pods_Profile.framework */; };
 		94D915E8D071E37FCE625E7C /* Pods_ProfileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A84112364A796F1493C79 /* Pods_ProfileTests.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		45BB41CC1E048B0C000FCEF1 /* StotyboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StotyboardRouter.swift; sourceTree = "<group>"; };
 		45BB41CE1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersRoutingSwizzle.swift; sourceTree = "<group>"; };
 		45BB41D01E055E82000FCEF1 /* DispathQueue+Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispathQueue+Once.swift"; sourceTree = "<group>"; };
+		45BB41D21E072236000FCEF1 /* SendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendingViewController.swift; sourceTree = "<group>"; };
 		B83F3C516B224908311570CE /* Pods-Profile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Profile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Profile/Pods-Profile.debug.xcconfig"; sourceTree = "<group>"; };
 		BC10A62F937DE360DE6B8028 /* Pods-ProfileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProfileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProfileTests/Pods-ProfileTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3D87FE7A1A2B5518A6E19C3 /* Pods-Profile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Profile.release.xcconfig"; path = "Pods/Target Support Files/Pods-Profile/Pods-Profile.release.xcconfig"; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				455B37281DF469DF00D47957 /* MainViewController.swift */,
 				45B6D9951DF838ED00038D29 /* ProfileViewController.swift */,
 				454424FD1DFEE9F100F7147B /* AddLinkViewController.swift */,
+				45BB41D21E072236000FCEF1 /* SendingViewController.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				452EC6FE1DF21C6100531090 /* RealmProfile.swift in Sources */,
 				4531AC681DF59B7C007F675F /* CreateProfileViewControllerViewModel.swift in Sources */,
 				452EC6FC1DF2195500531090 /* RealmUser.swift in Sources */,
+				45BB41D31E072236000FCEF1 /* SendingViewController.swift in Sources */,
 				452EC6CB1DF1E29400531090 /* AppDelegate.swift in Sources */,
 				45BB41D11E055E82000FCEF1 /* DispathQueue+Once.swift in Sources */,
 				452EC6F51DF1EEE500531090 /* DBManager.swift in Sources */,

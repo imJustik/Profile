@@ -67,16 +67,6 @@ class MainViewController: UIViewController,
         router?.navigateToCreateProfileScreen(animated: true)
 
     }
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "MoveToAddLinkSegue"
-//        {
-//            if let destinationVC = segue.destination as? AddLinkViewController {
-//                destinationVC.viewModel = AddLinkViewControllerViewModel(profile: viewModel.profiles![index])
-//            }
-//        }
-//    }
 }
 
 
