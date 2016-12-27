@@ -44,7 +44,7 @@ class PeekPopView: UIView {
     // Overlay view
     var overlayView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(white: 0.85, alpha: 0.5)
+        view.backgroundColor = UIColor(white: 0, alpha: 0.5)
         return view
     }()
     
@@ -165,7 +165,7 @@ class PeekPopTargetPreviewView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         imageContainer.frame = self.bounds
-        imageView.frame = imageViewFrame
+        imageView.frame = imageContainer.frame
         imageView.center = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
     }
     

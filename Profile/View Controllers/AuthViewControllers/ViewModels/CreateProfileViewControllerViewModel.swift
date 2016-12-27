@@ -61,7 +61,7 @@ class CreateProfileViewControllerViewModel :  CreateProfileViewModel {
     }
     
     func imageViewDidChange(image: UIImage?) {
-        profile.image = UIImagePNGRepresentation(image!) as NSData?
+        profile.image = UIImagePNGRepresentation(image!) as Data?
     }
     
     func birthdayTextDidChange(text: String?) {

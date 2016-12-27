@@ -64,7 +64,7 @@ class PeekPopManager {
         var images = [UIImage]()
         images.append(image)
         for i in 1...3 {
-            let radius: CGFloat = CGFloat(Double(i) * 8.0 / 3.0)
+            let radius: CGFloat = CGFloat(Double(i) * 80.0 / 3.0)
             if let blurredScreenshot = blurImageWithRadius(image, radius: radius) {
                 images.append(blurredScreenshot)
             }

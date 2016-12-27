@@ -55,14 +55,14 @@ class PeekPopGestureRecognizer: UIGestureRecognizer
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent)
     {
-        super.touchesMoved(touches, with: event)
-        if(self.state == .possible){
-            self.cancelTouches()
-        }
-        if let touch = touches.first, peekPopStarted == true
-        {
-            testForceChange(touch.majorRadius)
-        }
+//        super.touchesMoved(touches, with: event)
+//        if(self.state == .possible){
+//            self.cancelTouches()
+//        }
+//        if let touch = touches.first, peekPopStarted == true
+//        {
+//            testForceChange(touch.majorRadius)
+//        }
     }
     
     func delayedFirstTouch(_ touch: UITouch) {

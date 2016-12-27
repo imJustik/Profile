@@ -19,7 +19,7 @@ class RootViewController: UIViewController, RootViewControllerViewModelDelegate 
     
     override func viewDidLoad() {
         router = StoryboardRouter(viewController: self)
-       // rootControllerViewModel?.cleanAll()
+        //rootControllerViewModel?.cleanAll()
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -16,9 +16,10 @@ class StoryboardRouter<T: UIViewController> {
     
     func navigateToRegistationScreen(animated: Bool) {
         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "AuthStoryboard") as! AuthViewController
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "AuthNavigationController") as! UINavigationController
+        let controller = navigationController.viewControllers.first as! AuthViewController
         controller.viewModel = AuthViewControllerViewModel()
-        viewController?.present(controller, animated: animated, completion: nil)
+        viewController?.present(navigationController, animated: animated, completion: nil)
     }
     
     func navigateToMainProfileScreen(animated: Bool) {
@@ -26,7 +27,7 @@ class StoryboardRouter<T: UIViewController> {
         let controller = storyboard.instantiateViewController(withIdentifier: "MainStoryboard") as! UITabBarController
         let navVC = controller.viewControllers?.first as! UINavigationController
         let mainVC = navVC.viewControllers.first as! MainViewController
-        mainVC.viewModel = MainViewControllerViewModel()
+        mainVC.viewModel = MainViewControllerViewModel(with: UserManager())
         viewController?.present(controller, animated: animated, completion: nil)
     }
     
@@ -38,11 +39,23 @@ class StoryboardRouter<T: UIViewController> {
     }
     
 
-    
     func navigateToAddLinkScreen(animated: Bool, profile: RealmProfile) {
         self.performSegue(identifier: "MoveToAddLinkSegue") { (viewController: AddLinkViewController) in
             viewController.viewModel = AddLinkViewControllerViewModel(profile: profile)
         }
+    }
+    
+    func navigateToPhoneNumberScreen() {
+        self.performSegue(identifier: "ToPhoneNumberSegue") { (viewController: PhoneNumberViewController) in
+            viewController.viewModel = PhoneNumberViewModel()
+        }
+    }
+    
+    func navigateToEnterCodeScreen(viewModel: EnterCodeViewModel) {
+        self.performSegue(identifier: "ToEnterCodeSegue") { (viewController: EnterCodeViewController) in
+            viewController.viewModel = viewModel
+        }
+
     }
 }
 
