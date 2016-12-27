@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451D3E111E1145EB00B6C86D /* SMSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451D3E101E1145EB00B6C86D /* SMSService.swift */; };
 		452EC6CB1DF1E29400531090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452EC6CA1DF1E29400531090 /* AppDelegate.swift */; };
 		452EC6D01DF1E29400531090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452EC6CE1DF1E29400531090 /* Main.storyboard */; };
 		452EC6D21DF1E29400531090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452EC6D11DF1E29400531090 /* Assets.xcassets */; };
@@ -36,13 +37,15 @@
 		457DA4451DF4A29C00920AFC /* PageViewModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DA4441DF4A29C00920AFC /* PageViewModelManager.swift */; };
 		45A609EB1DF2325200F98F20 /* RealmTypeLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A609EA1DF2325200F98F20 /* RealmTypeLink.swift */; };
 		45A609ED1DF235DB00F98F20 /* RealmLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A609EC1DF235DB00F98F20 /* RealmLink.swift */; };
-		45B6D9961DF838ED00038D29 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6D9951DF838ED00038D29 /* ProfileViewController.swift */; };
 		45B6D9991DF83A9100038D29 /* MainViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6D9981DF83A9100038D29 /* MainViewControllerViewModel.swift */; };
-		45B6D99B1DF83AA600038D29 /* ProfileViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6D99A1DF83AA600038D29 /* ProfileViewControllerViewModel.swift */; };
 		45BB41CD1E048B0C000FCEF1 /* StotyboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41CC1E048B0C000FCEF1 /* StotyboardRouter.swift */; };
 		45BB41CF1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41CE1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift */; };
 		45BB41D11E055E82000FCEF1 /* DispathQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41D01E055E82000FCEF1 /* DispathQueue+Once.swift */; };
 		45BB41D31E072236000FCEF1 /* SendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BB41D21E072236000FCEF1 /* SendingViewController.swift */; };
+		45D5EA291E1158DD004AADF1 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5EA281E1158DD004AADF1 /* PhoneNumberViewController.swift */; };
+		45D5EA2B1E115912004AADF1 /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5EA2A1E115912004AADF1 /* EnterCodeViewController.swift */; };
+		45D5EA2D1E115924004AADF1 /* PhoneNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5EA2C1E115924004AADF1 /* PhoneNumberViewModel.swift */; };
+		45D5EA2F1E11592D004AADF1 /* EnterCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5EA2E1E11592D004AADF1 /* EnterCodeViewModel.swift */; };
 		63318F4F2758F3F07ABD5A34 /* Pods_Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AE6DC608A8559B89659F45 /* Pods_Profile.framework */; };
 		94D915E8D071E37FCE625E7C /* Pods_ProfileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A84112364A796F1493C79 /* Pods_ProfileTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		451D3E101E1145EB00B6C86D /* SMSService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSService.swift; sourceTree = "<group>"; };
 		452EC6C71DF1E29400531090 /* Profile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Profile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452EC6CA1DF1E29400531090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		452EC6CF1DF1E29400531090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,13 +96,15 @@
 		457DA4441DF4A29C00920AFC /* PageViewModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewModelManager.swift; sourceTree = "<group>"; };
 		45A609EA1DF2325200F98F20 /* RealmTypeLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTypeLink.swift; sourceTree = "<group>"; };
 		45A609EC1DF235DB00F98F20 /* RealmLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmLink.swift; sourceTree = "<group>"; };
-		45B6D9951DF838ED00038D29 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		45B6D9981DF83A9100038D29 /* MainViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerViewModel.swift; sourceTree = "<group>"; };
-		45B6D99A1DF83AA600038D29 /* ProfileViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerViewModel.swift; sourceTree = "<group>"; };
 		45BB41CC1E048B0C000FCEF1 /* StotyboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StotyboardRouter.swift; sourceTree = "<group>"; };
 		45BB41CE1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersRoutingSwizzle.swift; sourceTree = "<group>"; };
 		45BB41D01E055E82000FCEF1 /* DispathQueue+Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispathQueue+Once.swift"; sourceTree = "<group>"; };
 		45BB41D21E072236000FCEF1 /* SendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendingViewController.swift; sourceTree = "<group>"; };
+		45D5EA281E1158DD004AADF1 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
+		45D5EA2A1E115912004AADF1 /* EnterCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
+		45D5EA2C1E115924004AADF1 /* PhoneNumberViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewModel.swift; sourceTree = "<group>"; };
+		45D5EA2E1E11592D004AADF1 /* EnterCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeViewModel.swift; sourceTree = "<group>"; };
 		B83F3C516B224908311570CE /* Pods-Profile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Profile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Profile/Pods-Profile.debug.xcconfig"; sourceTree = "<group>"; };
 		BC10A62F937DE360DE6B8028 /* Pods-ProfileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProfileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProfileTests/Pods-ProfileTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3D87FE7A1A2B5518A6E19C3 /* Pods-Profile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Profile.release.xcconfig"; path = "Pods/Target Support Files/Pods-Profile/Pods-Profile.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				457DA4441DF4A29C00920AFC /* PageViewModelManager.swift */,
 				454425011DFEEE0900F7147B /* TypeLinkManager.swift */,
 				45BB41CC1E048B0C000FCEF1 /* StotyboardRouter.swift */,
+				451D3E101E1145EB00B6C86D /* SMSService.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -276,6 +283,8 @@
 			children = (
 				4531AC631DF4A52E007F675F /* AuthViewControllerViewModel.swift */,
 				4531AC671DF59B7C007F675F /* CreateProfileViewControllerViewModel.swift */,
+				45D5EA2C1E115924004AADF1 /* PhoneNumberViewModel.swift */,
+				45D5EA2E1E11592D004AADF1 /* EnterCodeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -313,6 +322,8 @@
 				457DA4401DF4906C00920AFC /* AuthContentViewController.swift */,
 				4531AC651DF5991B007F675F /* CreateProfileViewController.swift */,
 				4531AC621DF4A514007F675F /* ViewModels */,
+				45D5EA281E1158DD004AADF1 /* PhoneNumberViewController.swift */,
+				45D5EA2A1E115912004AADF1 /* EnterCodeViewController.swift */,
 			);
 			path = AuthViewControllers;
 			sourceTree = "<group>";
@@ -322,7 +333,6 @@
 			children = (
 				45B6D9971DF83A7D00038D29 /* ViewModels */,
 				455B37281DF469DF00D47957 /* MainViewController.swift */,
-				45B6D9951DF838ED00038D29 /* ProfileViewController.swift */,
 				454424FD1DFEE9F100F7147B /* AddLinkViewController.swift */,
 				45BB41D21E072236000FCEF1 /* SendingViewController.swift */,
 			);
@@ -333,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				45B6D9981DF83A9100038D29 /* MainViewControllerViewModel.swift */,
-				45B6D99A1DF83AA600038D29 /* ProfileViewControllerViewModel.swift */,
 				454424FF1DFEED2900F7147B /* AddLinkViewControllerViewModel.swift */,
 			);
 			path = ViewModels;
@@ -400,7 +409,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Iliya Kuznetsov";
 				TargetAttributes = {
 					452EC6C61DF1E29400531090 = {
@@ -575,25 +584,28 @@
 			files = (
 				4531AC661DF5991B007F675F /* CreateProfileViewController.swift in Sources */,
 				455B37271DF469D600D47957 /* AuthViewController.swift in Sources */,
+				45D5EA291E1158DD004AADF1 /* PhoneNumberViewController.swift in Sources */,
 				457DA4451DF4A29C00920AFC /* PageViewModelManager.swift in Sources */,
+				45D5EA2D1E115924004AADF1 /* PhoneNumberViewModel.swift in Sources */,
+				45D5EA2B1E115912004AADF1 /* EnterCodeViewController.swift in Sources */,
 				4531AC641DF4A52E007F675F /* AuthViewControllerViewModel.swift in Sources */,
 				45BB41CD1E048B0C000FCEF1 /* StotyboardRouter.swift in Sources */,
 				455B371A1DF4306A00D47957 /* RootViewController.swift in Sources */,
 				455B37171DF42F4C00D47957 /* UserManager.swift in Sources */,
 				453D9EC31DFB119B00F06055 /* AddNewLinkCell.swift in Sources */,
 				453D9EC51DFB11B400F06055 /* LinkCell.swift in Sources */,
-				45B6D9961DF838ED00038D29 /* ProfileViewController.swift in Sources */,
-				45B6D99B1DF83AA600038D29 /* ProfileViewControllerViewModel.swift in Sources */,
 				455B37291DF469DF00D47957 /* MainViewController.swift in Sources */,
 				454424FC1DFEE91700F7147B /* LinkTypeTableCell.swift in Sources */,
 				454424FE1DFEE9F100F7147B /* AddLinkViewController.swift in Sources */,
 				45B6D9991DF83A9100038D29 /* MainViewControllerViewModel.swift in Sources */,
 				455B371C1DF4309400D47957 /* RootControllerViewModel.swift in Sources */,
+				45D5EA2F1E11592D004AADF1 /* EnterCodeViewModel.swift in Sources */,
 				45BB41CF1E05597F000FCEF1 /* ViewControllersRoutingSwizzle.swift in Sources */,
 				454425021DFEEE0900F7147B /* TypeLinkManager.swift in Sources */,
 				45A609EB1DF2325200F98F20 /* RealmTypeLink.swift in Sources */,
 				455B37151DF42E9C00D47957 /* AppDependence.swift in Sources */,
 				452EC6FE1DF21C6100531090 /* RealmProfile.swift in Sources */,
+				451D3E111E1145EB00B6C86D /* SMSService.swift in Sources */,
 				4531AC681DF59B7C007F675F /* CreateProfileViewControllerViewModel.swift in Sources */,
 				452EC6FC1DF2195500531090 /* RealmUser.swift in Sources */,
 				45BB41D31E072236000FCEF1 /* SendingViewController.swift in Sources */,
@@ -664,6 +676,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -714,6 +727,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

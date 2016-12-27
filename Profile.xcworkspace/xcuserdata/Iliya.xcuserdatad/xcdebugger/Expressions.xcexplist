@@ -3,6 +3,25 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "CreateProfileViewController.viewDidLoad() -&gt; ():CreateProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageView.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "imageView.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateProfileViewController.handleKeyboardNotification(Notification) -&gt; ():CreateProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "topConstraint">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ProfileViewController.collectionView(UICollectionView, cellForItemAt : IndexPath) -&gt; UICollectionViewCell:ProfileViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -17,7 +36,64 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ProfileViewController.viewDidLoad() -&gt; ():ProfileViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionView">
+            </PersistentString>
+            <PersistentString
+               value = "userImageView.frame.size.width/2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.collectionView(UICollectionView, cellForItemAt : IndexPath) -&gt; UICollectionViewCell:MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.item ">
+            </PersistentString>
+            <PersistentString
+               value = "viewModel.numberOfCells">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StoryboardRouter.navigateToRegistationScreen(animated : Bool) -&gt; ():StotyboardRouter.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationBar.viewControllers.first">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AddLinkViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:AddLinkViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewControllerViewModel.flipProfile() -&gt; ():MainViewControllerViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "profiles!.count - 1">
+            </PersistentString>
+            <PersistentString
+               value = "indexProfile">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AuthViewController.viewDidAppear(Bool) -&gt; ():AuthViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel?.user">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.viewControllerAtIndex(index : Int) -&gt; ProfileViewController:MainViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "viewModel">
@@ -36,10 +112,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MainViewControllerViewModel.updateData() -&gt; ():MainViewControllerViewModel.swift">
+         contextName = "SMSService.(sendCode(completion : (Bool) -&gt; ()) -&gt; ()).(closure #1):SMSService.swift">
          <PersistentStrings>
             <PersistentString
-               value = "profiles">
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.longtap() -&gt; ():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "controller">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.previewingContext(PreviewingContext, viewControllerForLocation : CGPoint) -&gt; UIViewController?:MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "profileView.frame.origin.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AuthViewController.startButtonTapped(UIButton) -&gt; ():AuthViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -52,53 +152,45 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CreateProfileViewController.handleKeyboardNotification(Notification) -&gt; ():CreateProfileViewController.swift">
+         contextName = "SendingGestureRecognizer.touchBegun(params : [Any]) -&gt; ():SendingGestureRecognizer.swift">
          <PersistentStrings>
             <PersistentString
-               value = "topConstraint">
+               value = "state">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProfileViewController.viewDidLoad() -&gt; ():ProfileViewController.swift">
+         contextName = "SendingViewController.viewWillAppear(Bool) -&gt; ():SendingViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "userImageView.frame.size.width/2">
-            </PersistentString>
-            <PersistentString
-               value = "collectionView">
+               value = "self.image">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RootViewController.viewDidLoad() -&gt; ():RootViewController.swift">
+         contextName = "MainViewControllerViewModel.updateData() -&gt; ():MainViewControllerViewModel.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "profiles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.tapped() -&gt; ():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.profiles!.count">
+            </PersistentString>
+            <PersistentString
+               value = "profileView">
+            </PersistentString>
             <PersistentString
                value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CreateProfileViewController.viewDidLoad() -&gt; ():CreateProfileViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "imageView.frame.size.width">
-            </PersistentString>
-            <PersistentString
-               value = "imageView.frame.size.height">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AuthViewController.viewDidAppear(Bool) -&gt; ():AuthViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewModel?.user">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainViewController.viewControllerAtIndex(index : Int) -&gt; ProfileViewController:MainViewController.swift">
+         contextName = "RootViewController.viewDidLoad() -&gt; ():RootViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "viewModel">

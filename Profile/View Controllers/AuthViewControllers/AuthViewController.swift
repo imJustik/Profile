@@ -12,11 +12,12 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
     
     var router : StoryboardRouter<UIViewController>?
     var pageViewController: UIPageViewController!
-    var viewModel : AuthViewControllerViewModel! {
+    var viewModel : AuthViewControllerViewModel? {
         didSet {
-            viewModel.delegate = self
+            viewModel?.delegate = self
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +32,16 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMove(toParentViewController: self)
-
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if viewModel?.user != nil {
-            router?.navigateToCreateProfileScreen(animated: true)
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
-    
     
     func viewControllerAtIndex(index:Int) -> AuthContentViewController {
-        guard let pageModels = self.viewModel.pageViewModels,
+        guard let pageModels = self.viewModel?.pageViewModels,
                   pageModels.count != 0,
                   index < pageModels.count else {
         return AuthContentViewController()
@@ -57,23 +56,11 @@ class AuthViewController: UIViewController, AuthViewControllerViewModelDelegate 
     
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-        
-        let digitsAppearance = DGTAppearance()
-        digitsAppearance.backgroundColor = UIColor.white
-        digitsAppearance.logoImage = UIImage(named: "vkLogo")
-        digitsAppearance.accentColor = UIColor.black
-        
-        let configuration = DGTAuthenticationConfiguration(accountFields: .defaultOptionMask)
-        configuration?.appearance = digitsAppearance
-        configuration?.title = "MyApp Title"
-        configuration?.phoneNumber = "9215821130"
-        
-        let digits = Digits.sharedInstance()
-        digits.authenticate(with: nil, configuration: configuration!) { (session, error) in
-            if (session != nil) {
-                self.viewModel.didStartButtonTap(session: session!)
-            }
-        }
+            viewModel?.didStartButtonTap()
+    }
+    
+    func moveToEnterCodeScreen() {
+        router?.navigateToPhoneNumberScreen()
     }
 }
 
@@ -103,7 +90,7 @@ extension AuthViewController : UIPageViewControllerDataSource {
         if (index == NSNotFound) { return nil }
         index += 1
         
-        if (index == self.viewModel.pageViewModels?.count) { return nil}
+        if (index == self.viewModel?.pageViewModels?.count) { return nil}
         
         return self.viewControllerAtIndex(index: index)
     }

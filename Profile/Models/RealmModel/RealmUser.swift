@@ -7,7 +7,7 @@
 //
 
 import RealmSwift
-import DigitsKit
+
 enum AccountType : Int {
     case Basic
     case Pro
@@ -27,19 +27,15 @@ class RealmUser: Object {
     }
     
     dynamic var authToken = ""
-    dynamic var authTokenSecret = ""
-    dynamic var userID = ""
     dynamic var phoneNumber = ""
     dynamic var isAuth = false
     var profiles = List<RealmProfile>()
     var friendProfiles = List<RealmProfile>()
     
-    convenience init(session: DGTSession) {
+    convenience init(authToken: String, phoneNumber: String) {
         self.init()
-        self.authToken = session.phoneNumber
-        self.authTokenSecret = session.authTokenSecret
-        self.userID = session.userID
-        self.phoneNumber = session.phoneNumber
+        self.authToken = authToken
+        self.phoneNumber = phoneNumber
     }
     
     

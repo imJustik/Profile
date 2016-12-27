@@ -7,16 +7,63 @@
 //
 
 import UIKit
+import CoreMotion
+import AudioToolbox
 
 class SendingViewController: UIViewController {
     
+    var image : UIImage? = nil
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var motionManager: CMMotionManager?
+    
     override func viewDidLoad() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(touchUp))
-        self.view.addGestureRecognizer(tap)
+        
+        imageView.layer.shadowColor = UIColor.white.cgColor
+        imageView.layer.shadowOpacity = 0.7
+        imageView.layer.shadowOffset = CGSize.zero
+        imageView.layer.shadowRadius = 8
     }
     
-    func touchUp() {
-        self.dismiss(animated: true, completion: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if image != nil {
+            imageView.image = self.image
+        }
+        
+        startMotionManager()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.4) {
+            self.view.backgroundColor = UIColor(white: 0, alpha: 0.4)
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+      stopMotionManager()
+    }
+
+    
+    func startMotionManager() {
+        motionManager = CMMotionManager()
+        motionManager?.accelerometerUpdateInterval = 0.2
+        motionManager?.gyroUpdateInterval = 0.2
+        motionManager?.deviceMotionUpdateInterval = 0.02
+        
+        if !motionManager!.isDeviceMotionActive {
+            motionManager?.startDeviceMotionUpdates(to: OperationQueue.current!) { deviceManager, error in
+                if (deviceManager!.userAcceleration.y > 2.0 ) {
+                    AudioServicesPlaySystemSound(SystemSoundID(1000))
+                }
+            }
+        }
+
+    }
+    
+    func stopMotionManager() {
+        motionManager?.stopDeviceMotionUpdates()
+        motionManager = nil
     }
     
 }

@@ -7,96 +7,132 @@
 //
 
 import UIKit
+import PeekPop
 
 class MainViewController: UIViewController,
-    MainViewViewModelDelegate, MainViewControllerDelegate {
-    var pageViewController : UIPageViewController!
-    var index = 0 //current profile id
+    MainViewViewModelDelegate {
     var router : StoryboardRouter<UIViewController>?
+    var isPresent = false
+    var longPress : UILongPressGestureRecognizer?
     
-    var viewModel : MainViewViewModel! {
+    var viewModel : MainViewControllerViewModel! {
         didSet {
             viewModel!.delegate = self
         }
     }
-
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    var isBackSide = false
+    let cellAddID = "AddCell"
+    let cellLinkID = "LinkCell"
+    
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var profileView: UIView!
+    
+    let strboard = UIStoryboard(name: "Profile", bundle: nil)
+    var controller : SendingViewController?
+    
     override func viewDidLoad() {
+        
+        
+        
         super.viewDidLoad()
         router = StoryboardRouter(viewController: self)
         self.automaticallyAdjustsScrollViewInsets = false
         
-        self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewProfile") as! UIPageViewController
-        self.pageViewController.dataSource = self
-        let startVC = self.viewControllerAtIndex(index: 0)
-        let viewControllers = [startVC]
+        let tap  = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        tap.numberOfTapsRequired = 2
+        self.view.addGestureRecognizer(tap)
+        self.view.isUserInteractionEnabled = true
         
-        self.pageViewController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
-         self.pageViewController.view.frame = CGRect(x: 0,y:65, width: self.view.frame.width, height: self.view.frame.size.height - 115)
         
-        self.addChildViewController(self.pageViewController)
-        self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMove(toParentViewController: self)
+        profileView.layer.shadowColor = UIColor.black.cgColor
+        profileView.layer.shadowOpacity = 0.10
+        profileView.layer.shadowOffset = CGSize.zero
+        profileView.layer.shadowRadius = 5
         
+        longPress = UILongPressGestureRecognizer(target: self, action: #selector(longtap(gestureRecognizer:)))
+        longPress?.minimumPressDuration = 0.7
+        profileView.addGestureRecognizer(longPress!)
+    }
+ 
+    
+    func longtap(gestureRecognizer: UILongPressGestureRecognizer)
+    {
+        if gestureRecognizer.state == .began {
+            controller = strboard.instantiateViewController(withIdentifier: "SendingViewController") as? SendingViewController
+            controller?.modalPresentationStyle = .overCurrentContext
+            controller?.image = profileView.screenshotView()
+            self.present(controller!, animated: false, completion: nil)
+        }
+        if gestureRecognizer.state == .ended {
+            controller?.dismiss(animated: false, completion: nil)
+            controller = nil
+        }
     }
     
-    func viewControllerAtIndex(index: Int) -> ProfileViewController {
-        guard let pageProfiles = self.viewModel.profiles,
-                  pageProfiles.count != 0,
-            index < pageProfiles.count else { return ProfileViewController() }
-        let vc : ProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileStoryboard") as! ProfileViewController
-        vc.viewModel = ProfileViewControllerViewModel(pageProfiles[index])
-        vc.mainVCDelegate = self
-        vc.pageIndex = index
-        return vc
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        viewModel.updateData()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.loadUser()
     }
     
-    
-    func moveToCreateLink() {
-        router?.navigateToAddLinkScreen(animated: true, profile: viewModel.profiles![index])
+  
+    func updateProfile() {
+        usernameLabel.text = viewModel.username
+        phoneNumberLabel.text = viewModel.phoneNumber
+        emailLabel.text = viewModel.email
+        collectionView.reloadData()
     }
+    
     
     @IBAction func addNewProfileButtonTapped(_ sender: Any) {
         router?.navigateToCreateProfileScreen(animated: true)
-
+        
     }
+    
+    
+    func tapped() {
+        guard viewModel.profiles!.count > 1 else { return }
+        viewModel.flipProfile()
+        
+        UIView.transition(with: profileView, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromRight, animations: nil, completion: {(bool) in
+            self.isBackSide = !self.isBackSide
+        })
+        
+        
+    }
+    
 }
 
-
-extension MainViewController : UIPageViewControllerDataSource {
+extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let vc = viewController as! ProfileViewController
-        index = vc.pageIndex as Int
-        
-        if (index == 0 || index == NSNotFound) {
-            return nil
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return viewModel.numberOfCells
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.item == viewModel.numberOfCells - 1 || viewModel.numberOfCells == 1 {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellAddID, for: indexPath) as! AddNewLinkCell
+            
+            
+            cell.didAddButtonTap = {
+               self.router?.navigateToAddLinkScreen(animated: true, profile: self.viewModel.getCurrentProfile())
+            }
+            
+            return cell
+        } else {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellLinkID, for: indexPath) as! LinkCell
+            cell.linkImageView.image = UIImage(named:viewModel.links![indexPath.item].type!.imageURL)
+            return cell
         }
-        index -= 1
-        return self.viewControllerAtIndex(index: index)
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let vc = viewController as! ProfileViewController
-        index = vc.pageIndex as Int
         
-        if (index == NSNotFound) { return nil }
-        index += 1
-        
-        if (index == self.viewModel.profiles?.count) { return nil}
-        
-        return self.viewControllerAtIndex(index: index)
     }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 0
-    }
-    
 }
+
+
+
+

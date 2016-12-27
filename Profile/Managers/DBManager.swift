@@ -15,7 +15,7 @@ class DBManager {
         return _sharedInstance
     }
     
-    let schemaVersion: UInt64 = 3
+    let schemaVersion: UInt64 = 4
     
     func cacheObject(_ object:Object) { 
         let  configuration = Realm.Configuration(encryptionKey: self.getKey(), schemaVersion: schemaVersion)

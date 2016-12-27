@@ -10,7 +10,7 @@ import Foundation
 
 extension UIView {
     
-    func screenshotView(_ inHierarchy: Bool = true, rect: CGRect? = nil) -> UIImage? {
+   public func screenshotView(_ inHierarchy: Bool = true, rect: CGRect? = nil) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, false, UIScreen.main.scale);
         defer{
             UIGraphicsEndImageContext()

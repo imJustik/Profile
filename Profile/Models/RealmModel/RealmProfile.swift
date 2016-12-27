@@ -31,7 +31,7 @@ class RealmProfile : Object {
     dynamic var middleName : String?
     dynamic var phoneNumber : String?
     dynamic var email : String?
-    dynamic var image : NSData?
+    dynamic var image : Data?
     dynamic var birthbay : String? // string for test
     let links = List<RealmLink>()
 }

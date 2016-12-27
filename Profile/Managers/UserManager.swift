@@ -15,8 +15,8 @@ class UserManager {
         return DBManager.shared.loadUserFromCache()
     }
     
-    func createUser(with session: DGTSession) {
-        let user = RealmUser(session: session)
+    func createUser(withToken authToken: String, phoneNumber: String) {
+        let user = RealmUser(authToken: authToken, phoneNumber: phoneNumber)
         user.isAuth = true
         DBManager.shared.cacheObject(user)
     }
